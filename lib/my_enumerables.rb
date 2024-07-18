@@ -56,6 +56,14 @@ class Array
       length
     end
   end
+
+  def my_map
+    mapped_arr = []
+    each do |v|
+      mapped_arr.push(yield(v))
+    end
+    mapped_arr
+  end
 end
 # a.each_with_index {|v,i| v*2, i*2}
 # v = self[0]
