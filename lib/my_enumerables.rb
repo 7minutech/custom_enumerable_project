@@ -37,6 +37,13 @@ class Array
     end
     false
   end
+
+  def my_none?
+    each do |v|
+      return false if yield(v)
+    end
+    true
+  end
 end
 # a.each_with_index {|v,i| v*2, i*2}
 # v = self[0]
