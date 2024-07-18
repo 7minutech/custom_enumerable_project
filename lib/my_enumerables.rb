@@ -30,6 +30,13 @@ class Array
     end
     true
   end
+
+  def my_any?
+    each do |v|
+      return true if yield v
+    end
+    false
+  end
 end
 # a.each_with_index {|v,i| v*2, i*2}
 # v = self[0]
