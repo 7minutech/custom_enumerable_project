@@ -23,6 +23,13 @@ class Array
     end
     self
   end
+
+  def my_all?
+    each do |v|
+      return false unless yield(v)
+    end
+    true
+  end
 end
 # a.each_with_index {|v,i| v*2, i*2}
 # v = self[0]
