@@ -44,6 +44,18 @@ class Array
     end
     true
   end
+
+  def my_count
+    if block_given?
+      count = 0
+      each do |v|
+        count += 1 if yield(v)
+      end
+      count
+    else
+      length
+    end
+  end
 end
 # a.each_with_index {|v,i| v*2, i*2}
 # v = self[0]
