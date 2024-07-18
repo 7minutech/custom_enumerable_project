@@ -64,6 +64,14 @@ class Array
     end
     mapped_arr
   end
+
+  def my_inject(initial_value)
+    sum = initial_value
+    each do |v|
+      sum = yield(sum, v)
+    end
+    sum
+  end
 end
 # a.each_with_index {|v,i| v*2, i*2}
 # v = self[0]
